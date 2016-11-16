@@ -19,6 +19,7 @@
 #===============================================================================
 
 import wx
+import os
 
 backgroundColour = wx.Colour(230, 230, 255)
 
@@ -30,7 +31,7 @@ class wxskinFrame(wx.Frame):
     def __init__(self, parent, ID=-1, title="Frame", pos=wx.DefaultPosition, size=wx.DefaultSize):
         wx.Frame.__init__(self, parent, ID, title, pos, size)
         self.SetBackgroundColour(backgroundColour)
-        icon = wx.Icon('pySIM.ico', wx.BITMAP_TYPE_ICO)
+        icon = wx.Icon(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'pySIM.ico'), wx.BITMAP_TYPE_ICO)
         self.SetIcon(icon)
 
 class wxskinPanel(wx.Panel):
